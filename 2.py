@@ -1,11 +1,14 @@
+#栈
 def check(string):
     stack = []
     result_line = [' '] * len(string)
+
 
     for index, char in enumerate(string):
         if char == '(':
             stack.append((char,index))
         elif char == ')':
+            # 直接和栈顶进行配对
             if stack and stack[-1][0]=='(':
                 stack.pop()
             else:
